@@ -73,7 +73,9 @@ export default function Header() {
                     >
                         {open ? <HiOutlineX size={22} /> : <HiOutlineMenu size={22} />}
                     </button>
+
                 </div>
+
             </div>
 
             {/* Mobile menu panel */}
