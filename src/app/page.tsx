@@ -1,7 +1,8 @@
 import Image from "next/image";
+import Link from "next/link";
+const WHATS_MESSAGE = "Olá, Dr. Iago! Vim pelo site e preciso de orientação em um caso criminal.";
+const WHATS_HREF = `https://wa.me/5569993309361?text=${encodeURIComponent(WHATS_MESSAGE)}`;
 import Hero from "@/components/Hero";
-import Carousel from "@/components/Carousel";
-import LeadMagnet from "@/components/LeadMagnet";
 
 export default function Home() {
   return (
@@ -9,130 +10,56 @@ export default function Home() {
 
       <Hero showEmergencyCTA={true} />
 
-      {/* Seção 2: Enquadramento do problema */}
-      <section id="o-que-esta-em-jogo" className="w-full border-y border-neutral-900/50" style={{ backgroundColor: "var(--brand-black)" }}>
-        <div className="mx-auto max-w-7xl px-4 py-20 md:py-24">
-          <div className="max-w-3xl">
-            <h2 className="text-2xl md:text-3xl font-semibold text-white">
-              O que está em jogo no seu caso criminal
-            </h2>
-            <p className="mt-3 text-neutral-300">
-              Prazos são curtos, decisões são técnicas e qualquer palavra pode ter impacto. Uma ação correta nas primeiras horas faz diferença.
-            </p>
-
-            <ul className="mt-8 space-y-3">
-              <li className="flex items-start gap-3">
-                <span className="mt-1 h-2 w-2 rounded-full" style={{ backgroundColor: "var(--brand-gold)" }} />
-                <span className="text-neutral-200">Flagrante e custódia em até 24h</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="mt-1 h-2 w-2 rounded-full" style={{ backgroundColor: "var(--brand-gold)" }} />
-                <span className="text-neutral-200">Risco de falar sem advogado</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="mt-1 h-2 w-2 rounded-full" style={{ backgroundColor: "var(--brand-gold)" }} />
-                <span className="text-neutral-200">Medidas cautelares restritivas (tornozeleira, afastamento, fiança)</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="mt-1 h-2 w-2 rounded-full" style={{ backgroundColor: "var(--brand-gold)" }} />
-                <span className="text-neutral-200">Exposição e impactos no trabalho/família</span>
-              </li>
-            </ul>
-
-            <p className="mt-8 text-neutral-300">
-              <span style={{ color: "var(--brand-gold)" }}>Ponte:</span> Minha função é transformar urgência e incerteza em um plano jurídico claro e executável.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Seção 3: Proposta de valor única (UVP) */}
-      <section id="uvp" className="w-full bg-neutral-50 scroll-mt-24">
-        <div className="mx-auto max-w-7xl px-4 py-20 md:py-24">
-          <div className="max-w-4xl">
-            <p className="text-sm font-medium" style={{ color: "var(--brand-gold)" }}>
-              Proposta de valor única
-            </p>
-            <h2 className="mt-2 text-2xl md:text-4xl font-semibold text-neutral-900">
-              Defesa penal com resposta ágil, estratégia transparente e comunicação em linguagem simples.
-            </h2>
-            <div className="mt-8 grid gap-4 sm:grid-cols-2">
-              <div className="rounded-lg border border-neutral-200 bg-white p-4">
-                <span className="text-neutral-800">Resposta em até 24 horas</span>
-                <p className="text-sm text-neutral-500">Plantão para urgências.</p>
-              </div>
-              <div className="rounded-lg border border-neutral-200 bg-white p-4">
-                <span className="text-neutral-800">Plano de ação por fase</span>
-                <p className="text-sm text-neutral-500">Policial, processual, júri e execução.</p>
-              </div>
-              <div className="rounded-lg border border-neutral-200 bg-white p-4">
-                <span className="text-neutral-800">Preparação para audiências e depoimentos</span>
-                <p className="text-sm text-neutral-500">Simulação e roteiro de perguntas.</p>
-              </div>
-              <div className="rounded-lg border border-neutral-200 bg-white p-4">
-                <span className="text-neutral-800">Canal seguro para documentos e atualizações</span>
-                <p className="text-sm text-neutral-500">Envio protegido e acompanhamento contínuo.</p>
-              </div>
+      {/* Sobre o Advogado */}
+      <section id="sobre" className="w-full border-y border-neutral-900/50 scroll-mt-24" style={{ backgroundColor: "var(--brand-black)" }}>
+        <div className="mx-auto max-w-7xl px-4 py-16 md:py-20">
+          <div className="grid gap-8 md:grid-cols-2 md:items-center">
+            <div>
+              <p className="text-sm font-medium" style={{ color: "var(--brand-gold)" }}>Sobre o advogado</p>
+              <h2 className="mt-1 text-2xl md:text-3xl font-semibold text-white">Dr. Iago Zalenda — OAB/RO 13938</h2>
+              <p className="mt-3 text-neutral-300">Atuação focada em flagrantes, audiências de custódia e defesa técnica ao longo do processo penal. Linguagem simples, estratégia clara e resposta ágil.</p>
+              <ul className="mt-4 space-y-2 text-sm text-neutral-300">
+                <li>• Defesa em delegacia e fórum</li>
+                <li>• Preparação para depoimentos e audiências</li>
+                <li>• Canal seguro para documentos (LGPD)</li>
+              </ul>
             </div>
-            <div className="mt-8">
-              <p className="text-neutral-700">
-                <span className="font-medium" style={{ color: "var(--brand-gold)" }}>Para quem:</span> pessoas físicas e empresas em Porto Velho e região metropolitana.
-              </p>
-              <p className="mt-2 text-sm text-neutral-500">
-                Expectativa realista: Prazos e medidas variam conforme o caso, foro e complexidade.
-              </p>
+            <div className="flex justify-center">
+              <Image
+                src="/zalenda.jpg"
+                width={360}
+                height={360}
+                alt="Foto do advogado Iago Zalenda"
+                className="h-auto w-64 md:w-80 rounded-xl ring-1 ring-neutral-800"
+                priority
+              />
             </div>
           </div>
         </div>
       </section>
 
-      <section id="como-funciona" className="w-full max-w-7xl px-4 py-24 bg-neutral-50 rounded-2xl scroll-mt-24">
-        <div className="mx-auto max-w-5xl">
-          <p className="text-sm font-medium" style={{ color: "var(--brand-gold)" }}>Como funciona</p>
-          <h2 className="mt-1 text-2xl md:text-3xl font-semibold text-neutral-900">3 passos simples</h2>
-
-          <div className="mt-10 grid gap-6 md:grid-cols-3">
-            {/* Passo 1 */}
-            <div className="rounded-xl border border-neutral-200 bg-white p-5 shadow-sm">
-              <div className="flex items-center gap-3">
-                <span className="inline-flex h-8 w-8 items-center justify-center rounded-full text-sm font-semibold text-black" style={{ backgroundColor: "var(--brand-gold)" }}>1</span>
-                <h3 className="text-base font-semibold text-neutral-900">Triagem e consulta</h3>
-              </div>
-              <p className="mt-3 text-sm text-neutral-600">
-                Coleta dos fatos essenciais, documentos e análise preliminar de riscos e prazos (inclui orientações imediatas).
-              </p>
-              <a href="#cta-final" className="mt-4 inline-flex items-center justify-center rounded-md px-3 py-2 text-sm font-medium text-black" style={{ backgroundColor: "var(--brand-gold)" }}>
-                Agendar consulta
-              </a>
+      {/* Serviços (compacto) */}
+      <section id="servicos" className="w-full bg-neutral-50 scroll-mt-24">
+        <div className="mx-auto max-w-7xl px-4 py-16 md:py-20">
+          <div className="grid gap-4 md:grid-cols-3">
+            <div className="rounded-xl border border-neutral-200 bg-white p-5">
+              <h3 className="text-base font-semibold text-neutral-900">Atendimento emergencial</h3>
+              <p className="mt-2 text-sm text-neutral-700">Flagrante e custódia no TJRO. Resposta ágil e orientações iniciais.</p>
             </div>
-
-            {/* Passo 2 */}
-            <div className="rounded-xl border border-neutral-200 bg-white p-5 shadow-sm">
-              <div className="flex items-center gap-3">
-                <span className="inline-flex h-8 w-8 items-center justify-center rounded-full text-sm font-semibold text-black" style={{ backgroundColor: "var(--brand-gold)" }}>2</span>
-                <h3 className="text-base font-semibold text-neutral-900">Plano jurídico</h3>
-              </div>
-              <p className="mt-3 text-sm text-neutral-600">
-                Estratégia por fase, lista de documentos, medidas cabíveis (habeas corpus, liberdade provisória, ANPP, cautelares), cronograma e honorários conforme Tabela OAB/RO.
-              </p>
-              <a href="#cta-final" className="mt-4 inline-flex items-center justify-center rounded-md px-3 py-2 text-sm font-medium" style={{ color: "var(--brand-gold)", border: "1px solid var(--brand-gold)" }}>
-                Receber plano
-              </a>
+            <div className="rounded-xl border border-neutral-200 bg-white p-5">
+              <h3 className="text-base font-semibold text-neutral-900">Defesa em processo</h3>
+              <p className="mt-2 text-sm text-neutral-700">Atuação em delegacia e fórum, peças, audiências e estratégia por fase.</p>
             </div>
-
-            {/* Passo 3 */}
-            <div className="rounded-xl border border-neutral-200 bg-white p-5 shadow-sm">
-              <div className="flex items-center gap-3">
-                <span className="inline-flex h-8 w-8 items-center justify-center rounded-full text-sm font-semibold text-black" style={{ backgroundColor: "var(--brand-gold)" }}>3</span>
-                <h3 className="text-base font-semibold text-neutral-900">Execução e acompanhamento</h3>
-              </div>
-              <p className="mt-3 text-sm text-neutral-600">
-                Atuação em delegacia e fórum (protocolos, audiências, negociações), relatórios e revisão contínua da estratégia.
-              </p>
-              <a href="#cta-final" className="mt-4 inline-flex items-center justify-center rounded-md px-3 py-2 text-sm font-medium text-white" style={{ backgroundColor: "#111", border: "1px solid var(--brand-gold)" }}>
-                Iniciar acompanhamento
-              </a>
+            <div className="rounded-xl border border-neutral-200 bg-white p-5">
+              <h3 className="text-base font-semibold text-neutral-900">Documentos e privacidade</h3>
+              <p className="mt-2 text-sm text-neutral-700">Canais seguros para envio de documentos. LGPD em vigor.</p>
             </div>
+          </div>
+          <div className="mt-6">
+            {/* Botão de ação principal desta seção: agora abre WhatsApp com mensagem padrão */}
+            <a href={WHATS_HREF} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center rounded-md px-4 py-2 text-sm font-medium text-black" style={{ backgroundColor: "var(--brand-gold)" }}>
+              Falar agora
+            </a>
           </div>
         </div>
       </section>
@@ -270,9 +197,6 @@ export default function Home() {
                 <p className="mt-3 text-neutral-300">
                   Publicados somente quando autorizados e em conformidade com as normas da OAB.
                 </p>
-                <a href="#casos" className="mt-4 inline-flex items-center justify-center rounded-md px-3 py-2 text-sm font-medium text-black" style={{ backgroundColor: "var(--brand-gold)" }}>
-                  Ver casos & depoimentos
-                </a>
               </div>
             </div>
           </div>
@@ -343,7 +267,8 @@ export default function Home() {
             </div>
 
             <div className="mt-8">
-              <a href="#cta-final" className="inline-flex items-center justify-center rounded-md px-4 py-2 text-sm font-medium text-black" style={{ backgroundColor: "var(--brand-gold)" }}>
+              {/* Botão de conversão: abrir conversa no WhatsApp */}
+              <a href={WHATS_HREF} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center rounded-md px-4 py-2 text-sm font-medium text-black" style={{ backgroundColor: "var(--brand-gold)" }}>
                 Agendar consulta agora
               </a>
             </div>
@@ -351,161 +276,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="honorarios" className="w-full max-w-7xl px-4 py-24 bg-neutral-50 rounded-2xl scroll-mt-24">
-        <div className="mx-auto max-w-5xl">
-          <p className="text-sm font-medium" style={{ color: "var(--brand-gold)" }}>Honorários e formatos</p>
-          <h2 className="mt-1 text-2xl md:text-3xl font-semibold text-neutral-900">Transparência de honorários</h2>
 
-          <p className="mt-2 text-sm text-neutral-600">Formatos usuais (conforme Código de Ética e Tabela OAB/RO):</p>
-
-          {/* Mobile: Carousel */}
-          <div className="mt-6 md:hidden">
-            <Carousel ariaLabel="Honorários e formatos">
-              <div className="snap-start shrink-0 w-80 sm:w-[28rem] rounded-xl border border-neutral-200 bg-white p-5">
-                <ul className="space-y-2 text-neutral-800">
-                  <li className="flex items-start gap-2">
-                    <span className="mt-2 h-1.5 w-1.5 rounded-full" style={{ backgroundColor: "var(--brand-gold)" }} />
-                    <span>Consulta avulsa</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="mt-2 h-1.5 w-1.5 rounded-full" style={{ backgroundColor: "var(--brand-gold)" }} />
-                    <span>Por fase: policial / instrução / recursos / júri / execução penal</span>
-                  </li>
-                </ul>
-              </div>
-              <div className="snap-start shrink-0 w-80 sm:w-[28rem] rounded-xl border border-neutral-200 bg-white p-5">
-                <ul className="space-y-2 text-neutral-800">
-                  <li className="flex items-start gap-2">
-                    <span className="mt-2 h-1.5 w-1.5 rounded-full" style={{ backgroundColor: "var(--brand-gold)" }} />
-                    <span>Acompanhamento contínuo (empresas)</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="mt-2 h-1.5 w-1.5 rounded-full" style={{ backgroundColor: "var(--brand-gold)" }} />
-                    <span>Atendimento emergencial (plantão e deslocamento quando aplicável)</span>
-                  </li>
-                </ul>
-              </div>
-            </Carousel>
-          </div>
-
-          {/* Desktop: grid */}
-          <div className="mt-6 hidden md:grid md:grid-cols-2 gap-4">
-            <div className="rounded-xl border border-neutral-200 bg-white p-5">
-              <ul className="space-y-2 text-neutral-800">
-                <li className="flex items-start gap-2">
-                  <span className="mt-2 h-1.5 w-1.5 rounded-full" style={{ backgroundColor: "var(--brand-gold)" }} />
-                  <span>Consulta avulsa</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="mt-2 h-1.5 w-1.5 rounded-full" style={{ backgroundColor: "var(--brand-gold)" }} />
-                  <span>Por fase: policial / instrução / recursos / júri / execução penal</span>
-                </li>
-              </ul>
-            </div>
-
-            <div className="rounded-xl border border-neutral-200 bg-white p-5">
-              <ul className="space-y-2 text-neutral-800">
-                <li className="flex items-start gap-2">
-                  <span className="mt-2 h-1.5 w-1.5 rounded-full" style={{ backgroundColor: "var(--brand-gold)" }} />
-                  <span>Acompanhamento contínuo (empresas)</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="mt-2 h-1.5 w-1.5 rounded-full" style={{ backgroundColor: "var(--brand-gold)" }} />
-                  <span>Atendimento emergencial (plantão e deslocamento quando aplicável)</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <p className="mt-6 text-sm text-neutral-600">
-            Nota: Valores definidos após análise do caso e complexidade. Emitimos contrato e recibos.
-          </p>
-        </div>
-      </section>
-
-      <section id="faq" className="w-full max-w-7xl px-4 py-24 scroll-mt-24">
-        <div className="mx-auto max-w-5xl">
-          <p className="text-sm font-medium" style={{ color: "var(--brand-gold)" }}>Objeções e FAQ</p>
-          <h2 className="mt-1 text-2xl md:text-3xl font-semibold text-neutral-900">Perguntas frequentes</h2>
-
-          {/* Mobile: Carousel */}
-          <div className="mt-8 md:hidden">
-            <Carousel ariaLabel="FAQ">
-              <div className="snap-start shrink-0 w-80 sm:w-[28rem] rounded-xl border border-neutral-200 bg-white p-5">
-                <h3 className="text-base font-semibold text-neutral-900">Atende emergências 24h em Porto Velho?</h3>
-                <p className="mt-2 text-sm text-neutral-700">Sim. Há política de plantão com canais de contato priorizados para urgências. Consulte a disponibilidade no momento do chamado.</p>
-              </div>
-              <div className="snap-start shrink-0 w-80 sm:w-[28rem] rounded-xl border border-neutral-200 bg-white p-5">
-                <h3 className="text-base font-semibold text-neutral-900">Quanto tempo até a audiência de custódia?</h3>
-                <p className="mt-2 text-sm text-neutral-700">Como regra, até 24h a partir do flagrante, conforme legislação aplicável. O acompanhamento desde as primeiras horas é essencial.</p>
-              </div>
-              <div className="snap-start shrink-0 w-80 sm:w-[28rem] rounded-xl border border-neutral-200 bg-white p-5">
-                <h3 className="text-base font-semibold text-neutral-900">Quais documentos preciso?</h3>
-                <p className="mt-2 text-sm text-neutral-700">RG/CPF, comprovantes, boletim/auto e contatos de possíveis testemunhas. Outros documentos podem ser indicados após triagem.</p>
-              </div>
-              <div className="snap-start shrink-0 w-80 sm:w-[28rem] rounded-xl border border-neutral-200 bg-white p-5">
-                <h3 className="text-base font-semibold text-neutral-900">Como são definidos os honorários?</h3>
-                <p className="mt-2 text-sm text-neutral-700">Conforme Tabela OAB/RO, complexidade do caso e eventuais deslocamentos. Sempre de forma transparente e formalizada em contrato.</p>
-              </div>
-              <div className="snap-start shrink-0 w-80 sm:w-[28rem] rounded-xl border border-neutral-200 bg-white p-5">
-                <h3 className="text-base font-semibold text-neutral-900">Você atua em quais comarcas?</h3>
-                <p className="mt-2 text-sm text-neutral-700">Porto Velho e região metropolitana. Outras localidades podem ser avaliadas caso a caso.</p>
-              </div>
-              <div className="snap-start shrink-0 w-80 sm:w-[28rem] rounded-xl border border-neutral-200 bg-white p-5">
-                <h3 className="text-base font-semibold text-neutral-900">Atendimento online é possível?</h3>
-                <p className="mt-2 text-sm text-neutral-700">Sim. Utilizamos canais seguros para reuniões e troca de documentos, respeitando a LGPD.</p>
-              </div>
-              <div className="snap-start shrink-0 w-80 sm:w-[28rem] rounded-xl border border-neutral-200 bg-white p-5">
-                <h3 className="text-base font-semibold text-neutral-900">E se meu caso envolver violência doméstica ou crimes de trânsito?</h3>
-                <p className="mt-2 text-sm text-neutral-700">O atendimento observa os limites éticos e legais, com orientação técnica sobre medidas cabíveis e fluxos específicos.</p>
-              </div>
-              <div className="snap-start shrink-0 w-80 sm:w-[28rem] rounded-xl border border-neutral-200 bg-white p-5">
-                <h3 className="text-base font-semibold text-neutral-900">Sigilo e proteção de dados?</h3>
-                <p className="mt-2 text-sm text-neutral-700">Adotamos medidas técnicas e organizacionais de segurança sob a LGPD, com canais criptografados e política de privacidade.</p>
-              </div>
-            </Carousel>
-          </div>
-
-          {/* Desktop: grid */}
-          <div className="mt-8 hidden md:grid grid-cols-2 gap-6">
-            <div className="rounded-xl border border-neutral-200 bg-white p-5">
-              <h3 className="text-base font-semibold text-neutral-900">Atende emergências 24h em Porto Velho?</h3>
-              <p className="mt-2 text-sm text-neutral-700">Sim. Há política de plantão com canais de contato priorizados para urgências. Consulte a disponibilidade no momento do chamado.</p>
-            </div>
-            <div className="rounded-xl border border-neutral-200 bg-white p-5">
-              <h3 className="text-base font-semibold text-neutral-900">Quanto tempo até a audiência de custódia?</h3>
-              <p className="mt-2 text-sm text-neutral-700">Como regra, até 24h a partir do flagrante, conforme legislação aplicável. O acompanhamento desde as primeiras horas é essencial.</p>
-            </div>
-            <div className="rounded-xl border border-neutral-200 bg-white p-5">
-              <h3 className="text-base font-semibold text-neutral-900">Quais documentos preciso?</h3>
-              <p className="mt-2 text-sm text-neutral-700">RG/CPF, comprovantes, boletim/auto e contatos de possíveis testemunhas. Outros documentos podem ser indicados após triagem.</p>
-            </div>
-            <div className="rounded-xl border border-neutral-200 bg-white p-5">
-              <h3 className="text-base font-semibold text-neutral-900">Como são definidos os honorários?</h3>
-              <p className="mt-2 text-sm text-neutral-700">Conforme Tabela OAB/RO, complexidade do caso e eventuais deslocamentos. Sempre de forma transparente e formalizada em contrato.</p>
-            </div>
-            <div className="rounded-xl border border-neutral-200 bg-white p-5">
-              <h3 className="text-base font-semibold text-neutral-900">Você atua em quais comarcas?</h3>
-              <p className="mt-2 text-sm text-neutral-700">Porto Velho e região metropolitana. Outras localidades podem ser avaliadas caso a caso.</p>
-            </div>
-            <div className="rounded-xl border border-neutral-200 bg-white p-5">
-              <h3 className="text-base font-semibold text-neutral-900">Atendimento online é possível?</h3>
-              <p className="mt-2 text-sm text-neutral-700">Sim. Utilizamos canais seguros para reuniões e troca de documentos, respeitando a LGPD.</p>
-            </div>
-            <div className="rounded-xl border border-neutral-200 bg-white p-5">
-              <h3 className="text-base font-semibold text-neutral-900">E se meu caso envolver violência doméstica ou crimes de trânsito?</h3>
-              <p className="mt-2 text-sm text-neutral-700">O atendimento observa os limites éticos e legais, com orientação técnica sobre medidas cabíveis e fluxos específicos.</p>
-            </div>
-            <div className="rounded-xl border border-neutral-200 bg-white p-5">
-              <h3 className="text-base font-semibold text-neutral-900">Sigilo e proteção de dados?</h3>
-              <p className="mt-2 text-sm text-neutral-700">Adotamos medidas técnicas e organizacionais de segurança sob a LGPD, com canais criptografados e política de privacidade.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Lead Magnet ético */}
-      <LeadMagnet />
 
       {/* CTA Final */}
       <section id="cta-final" className="w-full border-y border-neutral-900/50 scroll-mt-24" style={{ backgroundColor: "var(--brand-black)" }}>
@@ -513,14 +284,17 @@ export default function Home() {
           <h2 className="text-3xl md:text-4xl font-semibold text-white">Precisa de ajuda agora?</h2>
           <p className="mt-3 text-sm text-neutral-300">Resposta em até 24 horas • Confidencialidade • Contrato transparente</p>
 
-          <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
-            <a href="#cta-final" className="inline-flex items-center justify-center rounded-md px-5 py-3 text-sm font-semibold text-black" style={{ backgroundColor: "var(--brand-gold)" }}>
+          <div className="mt-8 flex w-full max-w-md flex-col items-stretch gap-3 sm:max-w-none sm:flex-row sm:justify-center">
+            {/* CTA primário: abrir WhatsApp com número e mensagem pré-preenchida */}
+            <a href={WHATS_HREF} target="_blank" rel="noopener noreferrer" className="inline-flex w-full sm:w-auto items-center justify-center rounded-md px-5 py-3 text-sm font-semibold text-black" style={{ backgroundColor: "var(--brand-gold)" }}>
               Atendimento emergencial 24h
             </a>
-            <a href="#cta-final" className="inline-flex items-center justify-center rounded-md px-5 py-3 text-sm font-semibold text-white" style={{ border: "1px solid var(--brand-gold)" }}>
+            {/* CTA secundário: abrir WhatsApp para agendar */}
+            <a href={WHATS_HREF} target="_blank" rel="noopener noreferrer" className="inline-flex w-full sm:w-auto items-center justify-center rounded-md px-5 py-3 text-sm font-semibold text-white" style={{ border: "1px solid var(--brand-gold)" }}>
               Agendar consulta
             </a>
-            <a href="#cta-final" className="inline-flex items-center justify-center rounded-md px-5 py-3 text-sm font-semibold text-white" style={{ border: "1px solid var(--brand-gold)" }}>
+            {/* CTA alternativo: mensagem no WhatsApp */}
+            <a href={WHATS_HREF} target="_blank" rel="noopener noreferrer" className="inline-flex w-full sm:w-auto items-center justify-center rounded-md px-5 py-3 text-sm font-semibold text-white" style={{ border: "1px solid var(--brand-gold)" }}>
               Enviar resumo do caso
             </a>
           </div>

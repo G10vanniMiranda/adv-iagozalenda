@@ -4,6 +4,7 @@ import "./globals.css";
 import TopBar from "@/components/TopBar";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,7 +31,8 @@ export default function RootLayout({
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <TopBar />
         <Header />
-        {children}
+  {children}
+  <FloatingWhatsApp />
         <Footer />
       </body>
     </html>

@@ -1,19 +1,15 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import { HiOutlineMenu, HiOutlineX } from "react-icons/hi";
 
+// Navegação principal
 const nav = [
-    { href: "#o-que-esta-em-jogo", label: "O que está em jogo" },
-    { href: "#uvp", label: "Proposta de Valor" },
-    { href: "#como-funciona", label: "Como Funciona" },
-    { href: "#beneficios", label: "Benefícios" },
-    { href: "#provas-confianca", label: "Provas & Confiança" },
-    { href: "#oferta", label: "Oferta" },
-    { href: "#honorarios", label: "Honorários" },
-    { href: "#faq", label: "FAQ" },
-    { href: "#materiais", label: "Recursos" },
+    { href: "/", label: "Home" },
+    { href: "#sobre", label: "Sobre" },
+    { href: "#servicos", label: "Serviços" },
     { href: "#cta-final", label: "Ajuda agora" },
 ];
 
@@ -30,22 +26,25 @@ export default function Header() {
 
             <div className="mx-auto max-w-7xl px-4 py-4">
                 <div className="flex items-center justify-between gap-6">
-                    <Link href="#" className="flex items-center gap-3" onClick={closeMenu}>
-                        {/* Logo placeholder - use your logo in /public if available */}
-                        <div
-                            aria-hidden
-                            className="h-9 w-9 rounded-full ring-1 ring-neutral-800"
-                            style={{ background: "linear-gradient(135deg, var(--brand-gold), #b88a1b)" }}
+                    <Link href="/" className="flex items-center gap-3" onClick={closeMenu}>
+                        {/* Avatar com foto do advogado (coloque o arquivo em /public/zalenda.jpg) */}
+                        <Image
+                            src="/zalenda1.jpeg"
+                            alt="Foto do advogado Iago Zalenda"
+                            width={48}
+                            height={48}
+                            className="h-12 w-12 rounded-full ring-1 ring-neutral-800 object-cover"
+                            style={{ objectPosition: "50% 40%" }}
                         />
                         <div className="flex flex-col leading-tight">
-                            <span className="text-sm text-neutral-300">Advocacia Criminal</span>
+                            <span className="text-sm text-neutral-300">Dr. Iago Zalenda</span>
                             <span className="text-base font-semibold" style={{ color: "var(--brand-gold)" }}>
                                 OAB/RO 13938
                             </span>
                         </div>
                     </Link>
 
-                    {/* Desktop nav */}
+                    {/* Desktop nav - pode apontar para seções ou páginas futuras */}
                     <nav className="hidden md:flex items-center gap-6 text-sm">
                         {nav.map((item) => (
                             <Link
@@ -61,7 +60,7 @@ export default function Header() {
                         ))}
                     </nav>
 
-                    {/* Mobile toggle */}
+                    {/* Mobile toggle - abre/fecha o menu no celular */}
                     <button
                         type="button"
                         aria-label={open ? "Fechar menu" : "Abrir menu"}

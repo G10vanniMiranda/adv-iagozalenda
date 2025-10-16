@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 
 type LeadMagnetForm = {
   name: string;
@@ -155,7 +156,7 @@ export default function LeadMagnet() {
           )}
 
           <p className="mt-4 text-xs text-neutral-500">
-            Ao enviar, você concorda com o tratamento dos seus dados conforme a LGPD. <a href="#privacidade" className="underline" style={{ color: "var(--brand-gold)" }}>Política de Privacidade</a>.
+            Ao enviar, você concorda com o tratamento dos seus dados conforme a LGPD. <Link href="#privacidade" className="underline" style={{ color: "var(--brand-gold)" }}>Política de Privacidade</Link>.
           </p>
         </div>
       </div>
