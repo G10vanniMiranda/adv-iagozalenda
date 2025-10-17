@@ -32,7 +32,6 @@ export default function Footer() {
             <h3 className="text-sm font-semibold text-white">Links</h3>
             <ul className="mt-3 space-y-1 text-sm">
               <li><Link href="#sobre" className="hover:underline" style={{ color: "var(--brand-gold)" }}>Sobre</Link></li>
-              <li><Link href="#servicos" className="hover:underline" style={{ color: "var(--brand-gold)" }}>Serviços</Link></li>
               <li><Link href="#cta-final" className="hover:underline" style={{ color: "var(--brand-gold)" }}>Ajuda agora</Link></li>
               <li><Link href="#termos" className="hover:underline" style={{ color: "var(--brand-gold)" }}>Termos de Uso</Link></li>
               <li><Link href="#privacidade" className="hover:underline" style={{ color: "var(--brand-gold)" }}>Privacidade (LGPD)</Link></li>

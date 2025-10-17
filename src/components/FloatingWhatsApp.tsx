@@ -18,8 +18,8 @@ export default function FloatingWhatsApp({
             aria-label="Abrir WhatsApp para atendimento"
             target="_blank"
             rel="noopener noreferrer"
-            className="fixed bottom-5 right-5 z-[60] inline-flex h-14 w-14 items-center justify-center rounded-full shadow-lg focus:outline-none focus:ring-2"
-            style={{ backgroundColor: "var(--brand-gold)", color: "#0b0b0b" }}
+            className="fixed bottom-5 right-5 z-[60] inline-flex h-14 w-14 items-center justify-center rounded-full shadow-lg focus:outline-none focus:ring-2 text-white"
+            style={{ backgroundColor: "#25D366" }}
         >
             <FaWhatsapp size={28} />
             <span className="sr-only">WhatsApp</span>

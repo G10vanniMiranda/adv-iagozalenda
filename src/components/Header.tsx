@@ -9,7 +9,6 @@ import { HiOutlineMenu, HiOutlineX } from "react-icons/hi";
 const nav = [
     { href: "/", label: "Home" },
     { href: "#sobre", label: "Sobre" },
-    { href: "#servicos", label: "Serviços" },
     { href: "#cta-final", label: "Ajuda agora" },
 ];
 
@@ -29,7 +28,7 @@ export default function Header() {
                     <Link href="/" className="flex items-center gap-3" onClick={closeMenu}>
                         {/* Avatar com foto do advogado (coloque o arquivo em /public/zalenda.jpg) */}
                         <Image
-                            src="/zalenda1.jpeg"
+                            src="/logo.jpg"
                             alt="Foto do advogado Iago Zalenda"
                             width={48}
                             height={48}

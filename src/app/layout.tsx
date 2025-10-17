@@ -5,6 +5,7 @@ import TopBar from "@/components/TopBar";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
+import PageTransition from "@/components/PageTransition";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,8 +32,10 @@ export default function RootLayout({
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <TopBar />
         <Header />
-  {children}
-  <FloatingWhatsApp />
+        <PageTransition>
+          {children}
+        </PageTransition>
+        <FloatingWhatsApp />
         <Footer />
       </body>
     </html>
