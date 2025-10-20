@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { SITE } from "@/config/site";
 
 export default function Footer() {
   return (
@@ -10,9 +11,9 @@ export default function Footer() {
             <h3 className="text-sm font-semibold text-white">Credibilidade e compliance</h3>
             <ul className="mt-3 space-y-1 text-sm">
               <li>OAB/RO 13938</li>
-              <li>CNPJ: 55.514.360/0001-01</li>
-              <li>Porto Velho/RO — Centro</li>
-              <li>Endereço: Rua Exemplo, 123</li>
+              <li>CNPJ: {SITE.cnpj}</li>
+              <li>{SITE.city} — Centro</li>
+              <li>Endereço: {SITE.address}</li>
             </ul>
           </div>
 
@@ -20,8 +21,8 @@ export default function Footer() {
           <div>
             <h3 className="text-sm font-semibold text-white">Contato e horários</h3>
             <ul className="mt-3 space-y-1 text-sm">
-              <li>Telefone/WhatsApp: (69) 99330-9361</li>
-              <li>E-mail: <a href="mailto:zalendaadvogados@gmail.com" className="underline hover:no-underline" style={{ color: "var(--brand-gold)" }}>zalendaadvogados@gmail.com</a></li>
+              <li>Telefone/WhatsApp: {SITE.phoneDisplay}</li>
+              <li>E-mail: <a href={`mailto:${SITE.email}`} className="underline hover:no-underline" style={{ color: "var(--brand-gold)" }}>{SITE.email}</a></li>
               <li>Atendimento: seg–sex, 9h–18h</li>
               <li>Plantão: sob disponibilidade</li>
             </ul>

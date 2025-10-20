@@ -1,6 +1,7 @@
 "use client";
 
 import { FaWhatsapp } from "react-icons/fa";
+import { SITE } from "@/config/site";
 
 type Props = {
     phone?: string; // E.164 sem sinais, ex: 5569999999999
@@ -8,8 +9,8 @@ type Props = {
 };
 
 export default function FloatingWhatsApp({
-    phone = "5569993309361",
-    message = "Olá, Dr. Iago! Vim pelo site e preciso de orientação em um caso criminal.",
+    phone = SITE.phoneE164,
+    message = SITE.whatsMessage,
 }: Props) {
     const href = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
     return (

@@ -1,13 +1,11 @@
 import Image from "next/image";
-import Link from "next/link";
-const WHATS_MESSAGE = "Olá, Dr. Iago! Vim pelo site e preciso de orientação em um caso criminal.";
-const WHATS_HREF = `https://wa.me/5569993309361?text=${encodeURIComponent(WHATS_MESSAGE)}`;
 import Hero from "@/components/Hero";
+import { WHATS_HREF } from "@/config/site";
 import Reveal from "@/components/Reveal";
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen py-2">
+    <div className="flex flex-col items-center justify-center min-h-screen py-2" id="conteudo">
 
       <Hero showEmergencyCTA={true} />
 
