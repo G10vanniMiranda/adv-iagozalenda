@@ -94,7 +94,7 @@ export default function Hero({ showEmergencyCTA = true }: HeroProps) {
                     <div className="hidden md:block">
                         <Reveal className="relative w-full h-[380px] md:h-[440px] lg:h-[520px] rounded-xl overflow-hidden ring-1 ring-neutral-800" direction="left">
                             <Image
-                                src="/zalenda1.jpeg"
+                                src="/zalenda2.jpeg"
                                 alt="Foto do advogado Iago Zalenda"
                                 fill
                                 priority
