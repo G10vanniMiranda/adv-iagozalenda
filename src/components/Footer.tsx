@@ -13,7 +13,6 @@ export default function Footer() {
               <li>OAB/RO 13938</li>
               <li>CNPJ: {SITE.cnpj}</li>
               <li>{SITE.city} — Centro</li>
-              <li>Endereço: {SITE.address}</li>
             </ul>
           </div>
 
