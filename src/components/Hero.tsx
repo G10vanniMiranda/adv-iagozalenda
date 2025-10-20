@@ -33,10 +33,13 @@ export default function Hero({ showEmergencyCTA = true }: HeroProps) {
             </div>
 
             <div className="relative mx-auto max-w-7xl px-4 pb-16 md:py-28">
+
                 {/* Desktop two-column layout */}
-                <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-10 -mt-24 md:mt-0">
+                <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-10 -mt-80 md:mt-0">
+
                     {/* Text column */}
                     <div className="relative z-10 max-w-3xl">
+
                         <Reveal as="h1" direction="up">
                             <span className="text-3xl md:text-5xl font-semibold tracking-tight text-white">
                                 Defesa Penal Estratégica em Porto Velho/RO: do flagrante à audiência de custódia
@@ -105,6 +108,7 @@ export default function Hero({ showEmergencyCTA = true }: HeroProps) {
                             <div className="absolute inset-0 bg-gradient-to-l from-black/30 to-transparent" />
                         </Reveal>
                     </div>
+
                 </div>
             </div>
         </section>
