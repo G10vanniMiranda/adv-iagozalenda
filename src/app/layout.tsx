@@ -25,6 +25,9 @@ export const metadata: Metadata = {
     default: SITE.name,
   },
   description: "Defesa Penal Estratégica em Porto Velho/RO. Atendimento emergencial, estratégia clara e acompanhamento próximo.",
+  alternates: {
+    canonical: "/",
+  },
   keywords: [
     "advogado criminal",
     "defesa penal",
