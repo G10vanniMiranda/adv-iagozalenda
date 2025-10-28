@@ -47,15 +47,15 @@ export default function Home() {
 
           <div className="mt-8 flex w-full max-w-md flex-col items-stretch gap-3 sm:max-w-none sm:flex-row sm:justify-center">
             {/* CTA primário: abrir WhatsApp com número e mensagem pré-preenchida */}
-            <Reveal as="a" direction="up" delay={0.15} href={WHATS_HREF} target="_blank" rel="noopener noreferrer" className="inline-flex w-full sm:w-auto items-center justify-center rounded-md px-5 py-3 text-sm font-semibold text-white" style={{ backgroundColor: "#25D366" }}>
+            <Reveal as="a" direction="up" delay={0.15} href={WHATS_HREF} target="_blank" rel="noopener noreferrer" className="inline-flex w-full sm:w-auto items-center justify-center rounded-md px-5 py-3 text-sm font-semibold text-white will-change-transform animate-[cta-pulse_1.5s_ease-in-out_infinite,cta-glow_1.5s_ease-in-out_infinite] motion-reduce:animate-none" style={{ backgroundColor: "#25D366" }}>
               Atendimento emergencial 24h
             </Reveal>
             {/* CTA secundário (cor original): aro dourado, sem preenchimento */}
-            <Reveal as="a" direction="up" delay={0.2} href={WHATS_HREF} target="_blank" rel="noopener noreferrer" className="inline-flex w-full sm:w-auto items-center justify-center rounded-md px-5 py-3 text-sm font-semibold text-white" style={{ border: "1px solid var(--brand-gold)" }}>
+            <Reveal as="a" direction="up" delay={0.2} href={WHATS_HREF} target="_blank" rel="noopener noreferrer" className="inline-flex w-full sm:w-auto items-center justify-center rounded-md px-5 py-3 text-sm font-semibold text-white will-change-transform animate-[cta-pulse_2s_ease-in-out_infinite] motion-reduce:animate-none" style={{ border: "1px solid var(--brand-gold)" }}>
               Agendar consulta
             </Reveal>
             {/* CTA alternativo: mensagem no WhatsApp */}
-            <Reveal as="a" direction="up" delay={0.25} href={WHATS_HREF} target="_blank" rel="noopener noreferrer" className="inline-flex w-full sm:w-auto items-center justify-center rounded-md px-5 py-3 text-sm font-semibold text-white" style={{ border: "1px solid var(--brand-gold)" }}>
+            <Reveal as="a" direction="up" delay={0.25} href={WHATS_HREF} target="_blank" rel="noopener noreferrer" className="inline-flex w-full sm:w-auto items-center justify-center rounded-md px-5 py-3 text-sm font-semibold text-white will-change-transform animate-[cta-pulse_2.2s_ease-in-out_infinite] motion-reduce:animate-none" style={{ border: "1px solid var(--brand-gold)" }}>
               Enviar resumo do caso
             </Reveal>
           </div>

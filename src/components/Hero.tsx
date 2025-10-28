@@ -58,7 +58,7 @@ export default function Hero({ showEmergencyCTA = true }: HeroProps) {
                                     href={whatsHref}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="inline-flex w-full sm:w-auto items-center justify-center rounded-md px-4 py-2 text-sm font-medium text-white"
+                                    className="inline-flex w-full sm:w-auto items-center justify-center rounded-md px-4 py-2 text-sm font-medium text-white will-change-transform animate-[cta-pulse_1.5s_ease-in-out_infinite,cta-glow_1.5s_ease-in-out_infinite] motion-reduce:animate-none"
                                     style={{ backgroundColor: "#25D366" }}
                                 >
                                     Atendimento emergencial 24h
@@ -69,7 +69,7 @@ export default function Hero({ showEmergencyCTA = true }: HeroProps) {
                                 href={whatsHref}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="inline-flex w-full sm:w-auto items-center justify-center rounded-md px-4 py-2 text-sm font-medium text-white"
+                                className="inline-flex w-full sm:w-auto items-center justify-center rounded-md px-4 py-2 text-sm font-medium text-white will-change-transform animate-[cta-pulse_2s_ease-in-out_infinite] motion-reduce:animate-none"
                             >
                                 Agendar consulta
                             </Reveal>
@@ -77,7 +77,7 @@ export default function Hero({ showEmergencyCTA = true }: HeroProps) {
                                 href={whatsHref}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="inline-flex w-full sm:w-auto items-center justify-center rounded-md px-4 py-2 text-sm font-medium text-white/90 hover:text-white"
+                                className="inline-flex w-full sm:w-auto items-center justify-center rounded-md px-4 py-2 text-sm font-medium text-white/90 hover:text-white will-change-transform animate-[cta-pulse_2.2s_ease-in-out_infinite] motion-reduce:animate-none"
                             >
                                 Analisar meu caso
                             </Reveal>
